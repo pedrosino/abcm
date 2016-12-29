@@ -1,7 +1,7 @@
 <div class="container">
   <h3>Cadastro de associado</h3>
   <p>Após o preenchimento do formulário, você receberá instruções para realizar o pagamento da taxa de inscrição anual no valor de R$ 50,00.</p>
-  <%= simple_form_for :associado do |f| %>
+  <%= simple_form_for @associado do |f| %>
     <%= f.input :nome, required: true, autofocus: true, label: "Nome completo" %>
     <%= f.input :email, required: true %>
     <%= f.input :cpf, required: true %>

@@ -4,13 +4,15 @@ class AssociadosController < ApplicationController
   end
 
   def new
+    @associado = Associado.new
   end
 
   def create
     @associado = Associado.new(associado_params)
 
-    @associado.save
-    redirect_to associados_path
+    if @associado.save
+      redirect_to associados_path
+    end
   end
 
   def associado_params

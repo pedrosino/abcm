@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161228221001) do
+ActiveRecord::Schema.define(version: 20161229164934) do
 
   create_table "associados", force: :cascade do |t|
     t.string   "nome",            limit: 255
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 20161228221001) do
     t.date     "data_vencimento"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+  end
+
+  create_table "noticias", force: :cascade do |t|
+    t.string   "titulo",     limit: 255,                  null: false
+    t.string   "slug",       limit: 255,   default: "",   null: false
+    t.text     "texto",      limit: 65535
+    t.boolean  "visivel",                  default: true
+    t.integer  "id_autor",   limit: 4
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
   end
 
 end
