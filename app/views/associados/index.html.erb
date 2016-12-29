@@ -12,7 +12,7 @@
       <% @associados.each do |associado| %>
         <tr>
           <td><%= associado.nome %></td>
-          <td><%=l associado.data_cadastro, format: :long %></td>
+          <td><%=l associado.data_cadastro, format: :default %></td>
         </tr>
       <% end %>
     </tbody>
