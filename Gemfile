@@ -27,6 +27,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'mysql2'
 gem 'font-awesome-sass'
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
