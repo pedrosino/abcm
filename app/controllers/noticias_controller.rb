@@ -11,7 +11,7 @@ class NoticiasController < ApplicationController
     @noticia = Noticia.new(noticia_params)
 
     if @noticia.save
-      #flash[:success] = "Notícia criada"
+      flash[:success] = "Notícia criada"
       redirect_to edit_noticia_path(@noticia)
     end
   end
@@ -23,10 +23,10 @@ class NoticiasController < ApplicationController
   def update
     @noticia = Noticia.find(params[:id])
     if @noticia.update_attributes(noticia_params)
-      #flash[:success] = "Notícia salva com sucesso!"
+      flash[:success] = "Notícia salva com sucesso!"
       redirect_to noticias_path
     else
-      #flash[:danger] = "Falha ao salvar!"
+      flash[:danger] = "Falha ao salvar!"
       render :edit
     end
   end
