@@ -1,0 +1,18 @@
+<div class="container">
+  <h3>Cadastro de associado</h3>
+  <p>Após o preenchimento do formulário, você receberá instruções para realizar o pagamento da taxa de inscrição anual no valor de R$ 50,00.</p>
+  <%= simple_form_for :associado do |f| %>
+    <%= f.input :nome, required: true, autofocus: true, label: "Nome completo" %>
+    <%= f.input :email, required: true %>
+    <%= f.input :cpf, required: true %>
+    <%= f.input :identidade, required: true %>
+    <%= f.input :endereco, required: true, label: "Endereço" %>
+    <%= f.input :id_wca, required: false, label: "Id da WCA" %>
+    <%= f.input :id_forum, required: false, label: "Id do forum" %>
+
+    <button type="submit" class="btn btn-success">Enviar</button>
+    <%= link_to root_url, class: "btn btn-warning" do %>
+      <%= icon("remove") %> Cancelar
+    <% end %>
+  <% end %>
+</div>

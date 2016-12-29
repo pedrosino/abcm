@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Associados</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Associado desde</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @associados.each do |associado| %>
+        <tr>
+          <td><%= associado.nome %></td>
+          <td><%=l associado.data_cadastro, format: :long %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
