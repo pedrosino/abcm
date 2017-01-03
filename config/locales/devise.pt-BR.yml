@@ -2,6 +2,8 @@ pt-BR:
   activerecord:
     attributes:
       usuario:
+        name: "Nome completo"
+        endereco: "Endereço"
         current_password: Senha atual
         email: Email
         password: Senha

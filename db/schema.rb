@@ -11,20 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161229175133) do
+ActiveRecord::Schema.define(version: 20161230221001) do
 
   create_table "associados", force: :cascade do |t|
-    t.string   "nome",            limit: 255
-    t.string   "email",           limit: 255
-    t.string   "cpf",             limit: 255
-    t.string   "identidade",      limit: 255
-    t.string   "endereco",        limit: 255
-    t.string   "id_wca",          limit: 255
-    t.string   "id_forum",        limit: 255
+    t.integer  "usuario_id",      limit: 4
     t.date     "data_cadastro"
     t.date     "data_vencimento"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "noticias", force: :cascade do |t|
@@ -53,6 +47,11 @@ ActiveRecord::Schema.define(version: 20161229175133) do
     t.datetime "confirmation_sent_at"
     t.string   "name",                   limit: 255
     t.string   "tipo",                   limit: 255
+    t.string   "cidade",                 limit: 255
+    t.string   "estado",                 limit: 255
+    t.string   "endereco",               limit: 255
+    t.string   "id_wca",                 limit: 255
+    t.string   "id_forum",               limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
   end
