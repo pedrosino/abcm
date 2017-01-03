@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20161229175133) do
     t.datetime "updated_at",                                      null: false
   end
 
+  add_index "usuarios", ["confirmation_token"], name: "index_usuarios_on_confirmation_token", unique: true, using: :btree
   add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
   add_index "usuarios", ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
 
