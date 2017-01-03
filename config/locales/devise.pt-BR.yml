@@ -1,12 +1,12 @@
 pt-BR:
   activerecord:
     attributes:
-      user:
+      usuario:
         current_password: Senha atual
         email: Email
         password: Senha
         password_confirmation: Confirme sua senha
-        remember_me: Lembre-se de mim
+        remember_me: Continuar conectado
         reset_password_token:
         unlock_token:
     models:
@@ -80,7 +80,7 @@ pt-BR:
         update: Atualizar
         we_need_your_current_password_to_confirm_your_changes: precisamos da sua senha atual para confirmar suas mudanças
       new:
-        sign_up: Inscrever-se
+        sign_up: Cadastrar
       signed_up: Bem vindo! Você realizou seu registro com sucesso.
       signed_up_but_inactive: Você se inscreveu com sucesso, porém nós não podemos autenticá-lo porque sua conta ainda não foi ativada.
       signed_up_but_locked: Você se inscreveu com sucesso. Porém nós não podemos autenticá-lo porque sua conta está bloqueada.
@@ -101,7 +101,7 @@ pt-BR:
         forgot_your_password: Esqueceu sua senha?
         sign_in: Login
         sign_in_with_provider: Entrar com %{provider}
-        sign_up: Inscrever-se
+        sign_up: Cadastrar
     unlocks:
       new:
         resend_unlock_instructions: Reenviar instruções de desbloqueio
