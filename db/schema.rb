@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 20161230221001) do
     t.string   "tipo",                   limit: 255
     t.string   "cidade",                 limit: 255
     t.string   "estado",                 limit: 255
-    t.string   "endereco",               limit: 255
     t.string   "id_wca",                 limit: 255
     t.string   "id_forum",               limit: 255
     t.datetime "created_at",                                      null: false

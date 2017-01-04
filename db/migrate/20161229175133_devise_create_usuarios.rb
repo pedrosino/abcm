@@ -35,7 +35,6 @@ class DeviseCreateUsuarios < ActiveRecord::Migration
       t.string :tipo
       t.string :cidade
       t.string :estado
-      t.string :endereco
       t.string :id_wca
       t.string :id_forum
 

@@ -1,4 +1,4 @@
-<h2>Alterar senha <%= resource_name.to_s.humanize %></h2>
+<h2>Editar cadastro</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -13,6 +13,24 @@
     <%= f.input :current_password, hint: "informe sua senha atual", required: true %>
     <%= f.input :password, label: "Nova senha", autocomplete: "off", hint: I18n.t('devise.registrations.edit.leave_blank_if_you_don_t_want_to_change_it'), required: false %>
     <%= f.input :password_confirmation, label: "Confirme a nova senha", required: false %>
+
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :cidade %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :estado %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :id_wca %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :id_forum %>
+      </div>
+    </div>
   </div>
 
   <div class="form-actions">
