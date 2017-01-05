@@ -31,7 +31,7 @@ class DeviseCreateUsuarios < ActiveRecord::Migration
       # t.datetime :locked_at
 
       ## Outras colunas de cadastro
-      t.string :name
+      t.string :nome
       t.string :tipo
       t.string :cidade
       t.string :estado

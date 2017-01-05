@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20161230221001) do
     t.string   "confirmation_token",     limit: 255
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string   "name",                   limit: 255
+    t.string   "nome",                   limit: 255
     t.string   "tipo",                   limit: 255
     t.string   "cidade",                 limit: 255
     t.string   "estado",                 limit: 255
