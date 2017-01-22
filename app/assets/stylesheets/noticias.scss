@@ -1,3 +1,27 @@
 // Place all the styles related to the Noticias controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.noticias-index {
+
+}
+
+.noticia {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #888;
+  padding-bottom: 10px;
+
+  .titulo {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  .data {
+    display: block;
+    margin-bottom: 5px;
+    font-style: italic;
+    font-size: 12px;
+  }
+}

@@ -6,8 +6,6 @@
     <%= f.input :visivel %>
 
     <button type="submit" class="btn btn-success">Salvar</button>
-    <%= link_to root_url, class: "btn btn-warning" do %>
-      <%= icon("remove") %> Cancelar
-    <% end %>
+    <%= link_to icon('remove', 'Cancelar'), root_url, class: "btn btn-warning" %>
   <% end %>
 </div>

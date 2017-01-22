@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Gerenciar associados</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Data de cadastro</th>
+        <th>Data de vencimento</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @usuarios.each do |usuario| %>
+        <tr class="">
+          <td><%= usuario.id %></td>
+          <td><%= usuario.nome %></td>
+          <td><%= usuario.email %></td>
+          <td><%=l usuario.associado.data_cadastro if usuario.associado.present? %></td>
+          <td><%=l usuario.associado.data_vencimento if usuario.associado.present? %></td>
+          <td><%= link_to icon('pencil','Editar'), edit_associado_path(usuario) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

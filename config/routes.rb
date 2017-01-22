@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :delegados
 
+  get 'associados/admin' => 'associados#admin', as: :admin_associados
   resources :associados
 
   resources :galerias

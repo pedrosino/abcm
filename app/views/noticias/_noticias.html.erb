@@ -1,0 +1,14 @@
+<% noticias.each do |noticia| %>
+  <div class="noticia">
+    <span class="titulo"><%= noticia.titulo %></span>
+    <%#= noticia.texto[0...50] %>
+    <span class="data">
+      Postada em <%=l noticia.created_at, format: :post %>.
+      <%# Esta subtração dá um resultado em segundos. 24h x 60 min x 60 seg = 86400 %>
+      <% if (noticia.updated_at - noticia.created_at) > 86400 %>
+        <br />Última atualização: <%=l noticia.updated_at, format: :post %>
+      <% end %>
+    </span>
+    <span class="mais"><%= link_to reverse_icon('Continue lendo', 'arrow-right'), noticia_path(noticia), class: 'btn btn-primary' %></span>
+  </div>
+<% end %>

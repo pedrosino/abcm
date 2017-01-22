@@ -1,0 +1,25 @@
+<div class="container">
+  <h3>Editar Associado</h3>
+  Nome: <%= @associado.usuario.nome %>
+  <%= link_to "Editar cadastro", edit_usuario_registration_path(@associado.usuario), class: "btn btn-primary" %>
+  <br /><br />
+  <%= @associado.id %>
+  <%= simple_form_for @associado do |f| %>
+    <%= f.input :usuario_id %>
+    <div class="daterange">
+      <%= f.input :data_cadastro, as: :date_picker, label: "Data de registro" %>
+      <%= f.input :data_vencimento, as: :date_picker, label: "Data de vencimento" %>
+    </div>
+
+    <button type="submit" class="btn btn-success">Enviar</button>
+    <%= link_to root_url, class: "btn btn-warning" do %>
+      <%= icon("remove") %> Cancelar
+    <% end %>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+$(function(){
+  $('.date_picker.form-control').datetimepicker();
+})
+</script>
