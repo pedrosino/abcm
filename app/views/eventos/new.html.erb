@@ -1,0 +1,9 @@
+<div class="container">
+  <h3>Cadastrar nova notícia</h3>
+  <%= simple_form_for @noticia do |f| %>
+    <%= f.input :titulo, required: true, autofocus: true, label: "Título" %>
+
+    <button type="submit" class="btn btn-success">Enviar</button>
+    <%= link_to icon('remove','Cancelar'), root_url, class: "btn btn-warning" %>
+  <% end %>
+</div>
