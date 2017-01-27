@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170127014559) do
     t.text     "resultados",  limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "slug",        limit: 255
   end
 
   create_table "noticias", force: :cascade do |t|

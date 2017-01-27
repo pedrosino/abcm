@@ -1,9 +1,9 @@
 <div class="container">
-  <h2>Notícias</h2>
-  <div class="noticias-index">
-    <%= render 'noticias', noticias: @noticias %>
+  <h2>Eventos</h2>
+  <div class="Eventos-index">
+    <%= render 'eventos', eventos: @eventos %>
   </div>
-  <% if current_usuario && current_usuario.pode_postar_noticia? %>
-    <%= link_to glyphicon('plus') + " Nova notícia", new_noticia_path, class: "btn btn-success" %>
+  <% if current_usuario && current_usuario.pode_postar_evento? %>
+    <%= link_to glyphicon('plus') + " Novo evento", new_evento_path, class: "btn btn-success" %>
   <% end %>
 </div>

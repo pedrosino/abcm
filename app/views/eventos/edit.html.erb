@@ -1,11 +1,19 @@
 <div class="container">
-  <h3>Editar notícia</h3>
-  <%= simple_form_for @noticia do |f| %>
-    <%= f.input :titulo, required: true, label: "Título" %>
-    <%= f.input :texto, required: true, autofocus: true %>
-    <%= f.input :visivel %>
+  <h3>Editar evento</h3>
+  <%= simple_form_for @evento do |f| %>
+    <%= f.input :nome, required: true, label: "Nome" %>
+    <%= f.input :data_inicio, required: true, label: "Data início", as: :date, html5: true %>
+    <%= f.input :data_fim, required: true, label: "Data fim", as: :date, html5: true %>
+    <%= f.input :local, required: true, label: "Local" %>
+    <%= f.input :endereco, required: true, label: "Endereço" %>
+    <%= f.input :site, required: true, label: "Site" %>
+    <%= f.input :intro, label: "Introdução" %>
+    <%= f.input :modalidades, required: true, label: "Modalidades" %>
+    <%= f.input :cronograma, label: "Cronograma" %>
+    <%= f.input :inscricoes, required: true, label: "Inscrições" %>
+    <%= f.input :resultados, label: "Resultados" %>
+    <%= f.button :submit, "Salvar", class: "btn btn-success" %>
 
-    <button type="submit" class="btn btn-success">Salvar</button>
     <%= link_to icon('remove', 'Cancelar'), root_url, class: "btn btn-warning" %>
   <% end %>
 </div>

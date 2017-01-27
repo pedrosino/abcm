@@ -1,10 +1,10 @@
 <div class="container">
-  <h3><%= @noticia.titulo %></h3>
+  <h3><%= @evento.titulo %></h3>
   <p>
-    <%= @noticia.texto %>
+    <%= @evento.texto %>
   </p>
-  <% if current_usuario && current_usuario.pode_postar_noticia? %>
-    <%= link_to glyphicon('pencil') + " Editar", edit_noticia_path(@noticia), class: "btn btn-info" %>
+  <% if current_usuario && current_usuario.pode_postar_evento? %>
+    <%= link_to glyphicon('pencil') + " Editar", edit_evento_path(@evento), class: "btn btn-info" %>
   <% end %>
-  <%= link_to glyphicon('arrow-left') + " Voltar", noticias_path, class: "btn btn-warning" %>
+  <%= link_to glyphicon('arrow-left') + " Voltar", eventos_path, class: "btn btn-warning" %>
 </div>
