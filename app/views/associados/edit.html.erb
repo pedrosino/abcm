@@ -1,11 +1,11 @@
 <div class="container">
   <h3>Editar Associado</h3>
-  Nome: <%= @associado.usuario.nome %>
-  <%= link_to "Editar cadastro", edit_usuario_registration_path(@associado.usuario), class: "btn btn-primary" %>
+  Nome: <%= @associado.user.nome %>
+  <%= link_to "Editar cadastro", edit_user_registration_path(@associado.user), class: "btn btn-primary" %>
   <br /><br />
   <%= @associado.id %>
   <%= simple_form_for @associado do |f| %>
-    <%= f.input :usuario_id %>
+    <%= f.input :user_id %>
     <div class="daterange">
       <%= f.input :data_cadastro, as: :date_picker, label: "Data de registro" %>
       <%= f.input :data_vencimento, as: :date_picker, label: "Data de vencimento" %>

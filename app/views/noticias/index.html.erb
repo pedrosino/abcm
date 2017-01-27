@@ -3,7 +3,7 @@
   <div class="noticias-index">
     <%= render 'noticias', noticias: @noticias %>
   </div>
-  <% if current_usuario && current_usuario.pode_postar_noticia? %>
+  <% if current_user && current_user.pode_postar_noticia? %>
     <%= link_to glyphicon('plus') + " Nova notícia", new_noticia_path, class: "btn btn-success" %>
   <% end %>
 </div>

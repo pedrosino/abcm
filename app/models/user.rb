@@ -1,4 +1,4 @@
-class Usuario < ActiveRecord::Base
+class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -7,7 +7,7 @@ class Usuario < ActiveRecord::Base
   # has_many :inscricoes
   has_one :associado
 
-  attr_accessor :current_usuario
+  attr_accessor :current_user
 
   def admin?
     tipo == 'a'

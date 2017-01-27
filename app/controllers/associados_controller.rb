@@ -1,5 +1,5 @@
 class AssociadosController < ApplicationController
-  before_action :authenticate_usuario!, except: [:index]
+  before_action :authenticate_user!, except: [:index]
   before_action -> { redireciona_usuario(:pode_editar_associado?) }, except: [:index]
 
   def index
@@ -7,7 +7,7 @@ class AssociadosController < ApplicationController
   end
 
   def admin
-    @usuarios = Usuario.all
+    @usuarios = User.all
   end
 
   def create
@@ -22,7 +22,7 @@ class AssociadosController < ApplicationController
   end
 
   def edit
-    @associado = Associado.find_or_initialize_by(usuario_id: params[:id])
+    @associado = Associado.find_or_initialize_by(user_id: params[:id])
   end
 
   def update
@@ -37,6 +37,6 @@ class AssociadosController < ApplicationController
   end
 
   def associado_params
-    associado_params = params.require(:associado).permit(:usuario_id, :data_cadastro, :data_vencimento)
+    associado_params = params.require(:associado).permit(:user_id, :data_cadastro, :data_vencimento)
   end
 end

@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Associados</h2>
-  <% if current_usuario && current_usuario.pode_editar_associado? %>
+  <% if current_user && current_user.pode_editar_associado? %>
     <%= link_to icon('lock', 'Gerenciar'), admin_associados_path, class: "btn btn-info" %>
   <% end %>
   <table class="table">
@@ -13,7 +13,7 @@
     <tbody>
       <% @associados.each do |associado| %>
         <tr>
-          <td><%= associado.usuario.nome %></td>
+          <td><%= associado.user.nome %></td>
           <td><%=l associado.data_cadastro, format: :default if associado.data_cadastro.present? %></td>
         </tr>
       <% end %>

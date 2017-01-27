@@ -1,5 +1,5 @@
 class NoticiasController < ApplicationController
-  before_action :authenticate_usuario!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action -> { redireciona_usuario(:pode_postar_noticia?) }, except: [:index, :show]
 
   def index
@@ -12,7 +12,7 @@ class NoticiasController < ApplicationController
 
   def create
     @noticia = Noticia.new(noticia_params)
-    @noticia.id_autor = current_usuario.id
+    @noticia.id_autor = current_user.id
     if @noticia.save
       flash[:success] = "Notícia criada"
       redirect_to edit_noticia_path(@noticia)

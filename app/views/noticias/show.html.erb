@@ -3,7 +3,7 @@
   <p>
     <%= @noticia.texto %>
   </p>
-  <% if current_usuario && current_usuario.pode_postar_noticia? %>
+  <% if current_user && current_user.pode_postar_noticia? %>
     <%= link_to glyphicon('pencil') + " Editar", edit_noticia_path(@noticia), class: "btn btn-info" %>
   <% end %>
   <%= link_to glyphicon('arrow-left') + " Voltar", noticias_path, class: "btn btn-warning" %>
