@@ -1,23 +1,23 @@
 class EventosController < ApplicationController
-  #before_action :authenticate_usuario!, except: [:index, :show]
-  #before_action -> { redireciona_usuario(:pode_postar_evento?) }, except: [:index, :show]
+  before_action :authenticate_usuario!, except: [:index, :show]
+  before_action -> { redireciona_usuario(:pode_postar_evento?) }, except: [:index, :show]
 
-    def index
-        @eventos = Evento.order(:data_inicio)
-    end
+  def index
+    @eventos = Evento.order(:data_inicio)
+  end
 
-    def new
-        @evento = Evento.new
-    end
+  def new
+    @evento = Evento.new
+  end
 
-    def create
-        @evento = Evento.new(evento_params)
-        if @evento.save
-            flash[:success] = "Evento criado"
-            redirect_to edit_evento_path(@evento)
-        else
-            flash[:danger] = "Falha ao criar evento"
-            render :new
+  def create
+    @evento = Evento.new(evento_params)
+    if @evento.save
+      flash[:success] = "Evento criado"
+      redirect_to evento_path(@evento)
+    else
+      flash[:danger] = "Falha ao criar evento"
+      render :new
     end
   end
 
@@ -44,7 +44,7 @@ class EventosController < ApplicationController
   end
 
   def evento_params
-    evento_params = params.require(:evento).permit(:titulo, :slug, :texto, :id_autor, :visivel)
+    evento_params = params.require(:evento).permit(:nome, :data_inicio, :data_fim, :local, :endereco, :site, :intro, :modalidades, :cronograma, :inscricoes, :resultados)
   end
 
 end

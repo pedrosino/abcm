@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Eventos</h2>
-  <div class="Eventos-index">
+  <div class="eventos-index">
     <%= render 'eventos', eventos: @eventos %>
   </div>
   <% if current_usuario && current_usuario.pode_postar_evento? %>

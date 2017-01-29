@@ -1,19 +1,6 @@
 <div class="container">
   <h3>Cadastrar novo evento</h3>
-  <%= simple_form_for @evento do |f| %>
-    <%= f.input :nome, required: true, label: "Nome" %>
-    <%= f.input :data_inicio, required: true, label: "Data início", as: :date, html5: true %>
-    <%= f.input :data_fim, required: true, label: "Data fim", as: :date, html5: true %>
-    <%= f.input :local, required: true, label: "Local" %>
-    <%= f.input :endereco, required: true, label: "Endereço" %>
-    <%= f.input :site, required: true, label: "Site" %>
-    <%= f.input :intro, label: "Introdução" %>
-    <%= f.input :modalidades, required: true, label: "Modalidades" %>
-    <%= f.input :cronograma, label: "Cronograma" %>
-    <%= f.input :resultados, label: "Resultados" %>
-    <%= f.input :inscricoes, required: true, label: "Inscrições" %>
-    <%= f.button :submit, "Salvar", class: "btn btn-success" %>
-
-    <%= link_to icon('remove', 'Cancelar'), root_url, class: "btn btn-warning" %>
-  <% end %>
+  <div class="eventos-form">
+    <%= render 'eventos_partial_form'%>
+  </div>
 </div>
