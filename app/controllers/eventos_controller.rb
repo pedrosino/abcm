@@ -1,5 +1,5 @@
 class EventosController < ApplicationController
-  before_action :authenticate_usuario!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action -> { redireciona_usuario(:pode_postar_evento?) }, except: [:index, :show]
 
   def index

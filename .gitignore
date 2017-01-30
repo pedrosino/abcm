@@ -15,10 +15,3 @@
 /log/*
 !/log/.keep
 /tmp
-
-#Ignorar arquivos não utilizados temporáriamente
-app/assets/javascripts/eventos.coffee
-app/helpers/eventos_helper.rb
-test/controllers/eventos_controller_test.rb
-test/fixtures/eventos.yml
-test/models/evento_test.rb

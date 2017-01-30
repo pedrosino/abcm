@@ -3,7 +3,7 @@
   <div class="eventos-index">
     <%= render 'eventos', eventos: @eventos %>
   </div>
-  <% if current_usuario && current_usuario.pode_postar_evento? %>
+  <% if current_user && current_user.pode_postar_evento? %>
     <%= link_to glyphicon('plus') + " Novo evento", new_evento_path, class: "btn btn-success" %>
   <% end %>
 </div>

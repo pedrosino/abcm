@@ -30,7 +30,7 @@
   <p class="resultados">
     Resultados: <%= @evento.resultados%>.
   </p>
-  <% if current_usuario && current_usuario.pode_postar_evento? %>
+  <% if current_user && current_user.pode_postar_evento? %>
     <%= link_to glyphicon('pencil') + " Editar", edit_evento_path(@evento), class: "btn btn-info" %>
   <% end %>
   <%= link_to glyphicon('arrow-left') + " Voltar", eventos_path, class: "btn btn-warning" %>
