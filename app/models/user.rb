@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # has_many :inscricoes
+  has_many :noticias, foreign_key: :id_autor
   has_one :associado
 
   attr_accessor :current_user
