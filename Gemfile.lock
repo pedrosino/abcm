@@ -52,6 +52,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
     arel (6.0.4)
     autoprefixer-rails (6.6.0)
       execjs
@@ -63,6 +65,13 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.6)
+    capybara (2.12.0)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -71,6 +80,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.4)
+    database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     devise (4.2.0)
       bcrypt (~> 3.0)
@@ -78,8 +88,16 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.3)
     erubis (2.7.0)
     execjs (2.7.0)
+    factory_girl (4.8.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.8.0)
+      factory_girl (~> 4.8.0)
+      railties (>= 3.0.0)
+    faker (1.7.2)
+      i18n (~> 0.5)
     font-awesome-sass (4.7.0)
       sass (>= 3.2)
     globalid (0.3.7)
@@ -107,6 +125,7 @@ GEM
     nokogiri (1.7.0)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
+    public_suffix (2.0.5)
     rack (1.6.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -138,6 +157,23 @@ GEM
     rdoc (4.3.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    rspec-core (3.5.4)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-rails (3.5.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -177,6 +213,8 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -184,15 +222,21 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   byebug
+  capybara
   coffee-rails (~> 4.1.0)
+  database_cleaner
   datetimepicker-rails!
   devise
+  factory_girl_rails
+  faker
   font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
   momentjs-rails (~> 2.9)!
   mysql2
   rails (= 4.2.5.1)
+  rake
+  rspec-rails
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   simple_form
