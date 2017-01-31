@@ -1,0 +1,37 @@
+<div class="container">
+  <h3><%= @evento.nome %></h3>
+  <p class="data">
+      Data de início: <%=l @evento.data_inicio, format: :post %>.
+  </p>
+  <p class="data">
+      Data de término: <%=l @evento.data_inicio, format: :post %>.
+  </p>
+  <p class="local">
+    Local: <%= @evento.local%>.
+  </p>
+  <p class="endereco">
+    Endereço: <%= @evento.endereco%>.
+  </p>
+  <p class="site">
+    Site: <%= @evento.site%>.
+  </p>
+  <p class="intro">
+    Introdução: <%= @evento.intro%>.
+  </p>
+  <p class="modalidades">
+    Modalidades: <%= @evento.modalidades%>.
+  </p>
+  <p class="cronograma">
+    Cronograma: <%= @evento.cronograma%>.
+  </p>
+  <p class="inscricoes">
+    Inscriçoes: <%= @evento.inscricoes%>.
+  </p>
+  <p class="resultados">
+    Resultados: <%= @evento.resultados%>.
+  </p>
+  <% if current_user && current_user.pode_postar_evento? %>
+    <%= link_to glyphicon('pencil') + " Editar", edit_evento_path(@evento), class: "btn btn-info" %>
+  <% end %>
+  <%= link_to glyphicon('arrow-left') + " Voltar", eventos_path, class: "btn btn-warning" %>
+</div>

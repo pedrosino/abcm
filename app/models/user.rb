@@ -25,4 +25,8 @@ class User < ActiveRecord::Base
   def pode_editar_associado?
     admin? || diretoria?
   end
+
+  def pode_postar_evento?
+    admin? || diretoria?
+  end
 end
