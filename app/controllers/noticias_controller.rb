@@ -36,7 +36,7 @@ class NoticiasController < ApplicationController
       flash[:success] = "Notícia salva com sucesso!"
       redirect_to noticia_path(@noticia)
     else
-      flash[:danger] = "Falha ao salvar!"
+      flash[:danger] = 'Falha ao salvar!'
       render :edit
     end
   end
@@ -45,6 +45,6 @@ class NoticiasController < ApplicationController
   end
 
   def noticia_params
-    noticia_params = params.require(:noticia).permit(:titulo, :slug, :texto, :id_autor, :visivel)
+    params.require(:noticia).permit(:titulo, :slug, :texto, :id_autor, :visivel)
   end
 end

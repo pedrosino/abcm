@@ -13,10 +13,10 @@ class EventosController < ApplicationController
   def create
     @evento = Evento.new(evento_params)
     if @evento.save
-      flash[:success] = "Evento criado"
+      flash[:success] = 'Evento criado'
       redirect_to evento_path(@evento)
     else
-      flash[:danger] = "Falha ao criar evento"
+      flash[:danger] = 'Falha ao criar evento'
       render :new
     end
   end
@@ -32,10 +32,10 @@ class EventosController < ApplicationController
   def update
     @evento = Evento.find(params[:id])
     if @evento.update_attributes(evento_params)
-      flash[:success] = "Evento salvo com sucesso!"
+      flash[:success] = 'Evento salvo com sucesso!'
       redirect_to evento_path(@evento)
     else
-      flash[:danger] = "Falha ao salvar!"
+      flash[:danger] = 'Falha ao salvar!'
       render :edit
     end
   end
@@ -44,7 +44,6 @@ class EventosController < ApplicationController
   end
 
   def evento_params
-    evento_params = params.require(:evento).permit(:nome, :data_inicio, :data_fim, :local, :endereco, :site, :intro, :modalidades, :cronograma, :inscricoes, :resultados)
+    params.require(:evento).permit(:codigo, :nome, :data_inicio, :data_fim, :local, :endereco, :site_externo, :site, :intro, :modalidades, :cronograma, :inscricoes, :resultados)
   end
-
 end

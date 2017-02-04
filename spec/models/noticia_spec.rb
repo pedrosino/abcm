@@ -8,7 +8,7 @@ describe Noticia do
   describe "Nova noticia" do
     it "slug correto" do
       noticia = FactoryGirl.create :noticia
-      expect(noticia.slug).to eq (noticia.titulo).parameterize
+      expect(noticia.slug).to eq noticia.titulo.parameterize
     end
   end
 end
