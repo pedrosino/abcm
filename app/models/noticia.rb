@@ -1,5 +1,5 @@
 class Noticia < ActiveRecord::Base
-  belongs_to :autor, class_name: "User", foreign_key: :id_autor
+  belongs_to :autor, class_name: 'User', foreign_key: :id_autor
 
   validates :slug, presence: true, uniqueness: true
 
