@@ -1,4 +1,4 @@
-onPage('eventos edit', function() {
+onPage('eventos edit, eventos new', function() {
   function esconder() {
     if($("#evento_site_externo").is(":checked")) {
       $(".evento_site").show();
