@@ -1,11 +1,13 @@
-onPage('eventos edit', function() {
+onPage('eventos edit, eventos new, eventos create', function() {
   function esconder() {
     if($("#evento_site_externo").is(":checked")) {
       $(".evento_site").show();
       $(".esconder").hide();
+      $('.esconder').find('textarea').val('');
     } else {
-      $(".evento_site").hide();
       $(".esconder").show();
+      $(".evento_site").hide();
+      $('.evento_site').find('input').val('');
     }
   }
 
