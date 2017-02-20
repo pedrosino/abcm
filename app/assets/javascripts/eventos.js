@@ -3,9 +3,11 @@ onPage('eventos edit, eventos new', function() {
     if($("#evento_site_externo").is(":checked")) {
       $(".evento_site").show();
       $(".esconder").hide();
+      $('.esconder').find('textarea').val('');
     } else {
-      $(".evento_site").hide();
       $(".esconder").show();
+      $(".evento_site").hide();
+      $('.evento_site').find('input').val('');
     }
   }
 
