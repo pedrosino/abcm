@@ -1,6 +1,6 @@
 class DelegadosController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action -> { redireciona_usuario(:pode_postar_noticia?) }, except: [:index, :show]
+  before_action -> { redireciona_usuario(:pode_criar_delegado?) }, except: [:index, :show]
 
   def index
     @delegados = Delegado.all.order(:nome)
@@ -22,9 +22,18 @@ class DelegadosController < ApplicationController
   end
 
   def edit
+    @delegado = Delegado.find(params[:id])
   end
 
   def update
+    @delegado = Delegado.find(params[:id])
+    if @delegado.update_attributes(delegado_params)
+      flash[:success] = 'Delegado salvo com sucesso!'
+      redirect_to delegados_path
+    else
+      flash[:danger] = 'Falha ao salvar!'
+      render :edit
+    end
   end
 
   def delegado_params
