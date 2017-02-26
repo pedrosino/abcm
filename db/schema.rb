@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170204134755) do
+ActiveRecord::Schema.define(version: 20170224180931) do
 
   create_table "associados", force: :cascade do |t|
     t.integer  "user_id",         limit: 4
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20170204134755) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "delegados", force: :cascade do |t|
+    t.string   "nome",       limit: 255
+    t.string   "email",      limit: 255
+    t.string   "local",      limit: 255
+    t.string   "id_wca",     limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "eventos", force: :cascade do |t|
     t.string   "nome",         limit: 255
     t.date     "data_inicio"
@@ -28,11 +37,11 @@ ActiveRecord::Schema.define(version: 20170204134755) do
     t.string   "local",        limit: 255
     t.string   "endereco",     limit: 255
     t.string   "site",         limit: 255
-    t.text     "intro",        limit: 65_535
-    t.text     "modalidades",  limit: 65_535
-    t.text     "cronograma",   limit: 65_535
-    t.text     "inscricoes",   limit: 65_535
-    t.text     "resultados",   limit: 65_535
+    t.text     "intro",        limit: 65535
+    t.text     "modalidades",  limit: 65535
+    t.text     "cronograma",   limit: 65535
+    t.text     "inscricoes",   limit: 65535
+    t.text     "resultados",   limit: 65535
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.string   "codigo",       limit: 255
@@ -42,7 +51,7 @@ ActiveRecord::Schema.define(version: 20170204134755) do
   create_table "noticias", force: :cascade do |t|
     t.string   "titulo",     limit: 255,                  null: false
     t.string   "slug",       limit: 255,   default: "",   null: false
-    t.text     "texto",      limit: 65_535
+    t.text     "texto",      limit: 65535
     t.boolean  "visivel",                  default: true
     t.integer  "id_autor",   limit: 4
     t.datetime "created_at",                              null: false

@@ -1,0 +1,9 @@
+<%= simple_form_for @delegado do |f| %>
+  <%= f.input :nome, required: true %>
+  <%= f.input :id_wca, required: true %>
+  <%= f.input :email, required: true %>
+  <%= f.input :local, required: true %>
+  <%= f.button :submit, "Salvar", class: "btn btn-success" %>
+
+  <%= link_to icon('remove', 'Cancelar'), eventos_path, class: "btn btn-warning" %>
+<% end %>
