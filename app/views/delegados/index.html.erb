@@ -3,7 +3,12 @@
   <div class="delegados-index">
     <% @delegados.each do |delegado| %>
       <div class="delegado">
-        <p><strong><%= delegado.nome %></strong> &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Resultados", "https://worldcubeassociation.org/results/p.php?i=#{delegado.id_wca}", target: '_blank' %></p>
+        <p><strong><%= delegado.nome %></strong>&nbsp;&nbsp;&nbsp;&nbsp;
+          <%= link_to "Resultados", "https://worldcubeassociation.org/results/p.php?i=#{delegado.id_wca}", target: '_blank' %>
+          <% if current_user && current_user.pode_criar_delegado? %>
+            &nbsp;&nbsp;&nbsp;&nbsp;<%= link_to glyphicon('pencil') + " Editar", edit_delegado_path(delegado) %>
+          <% end %>
+        </p>
         <p class="email">
           E-mail: <%= delegado.email%>
         </p>
@@ -13,7 +18,7 @@
       </div>
     <% end %>
   </div>
-  <%# if current_user && current_user.pode_postar_delegado? %>
-    <%#= link_to glyphicon('plus') + " Novo delegado", new_delegado_path, class: "btn btn-success" %>
-  <%# end %>
+  <% if current_user && current_user.pode_criar_delegado? %>
+    <%= link_to glyphicon('plus') + " Novo delegado", new_delegado_path, class: "btn btn-success" %>
+  <% end %>
 </div>
